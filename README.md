@@ -1,4 +1,2 @@
 # intel_ai_studyroom
-배운  거 공유하는 곳
-
-1
+read me.md의 내용이 이 곳에 출력됨
