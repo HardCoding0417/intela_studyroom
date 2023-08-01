@@ -1,0 +1,53 @@
+255, 259, 260
+
+'@overload'?
+
+
+
+
+인재상: not specialist, but generalist
+	무언가를 기획하는 사람이 되는 것이 좋다 // 넓게 공부하자.
+
+정보처리기사 자격증은 따자. (없는 것보단 낫고 기출만 풀고 가면 합격하니깐)
+
+
+
+<class>
+	현실 세계의 사물을 컴퓨터 안에서 고안하려고 구현된 개념.
+	OOP Language에서 object를 만들어내는 틀 (붕어빵 틀, 자동차 설계서)
+		instance: class로부터 만들어진 object
+
+사용 이유:
+	코드의 재사용 지양, 프로그램의 모듈화
+
+terminology:
+	field(variable defined in class), method(function defined in class), instance
+
+- constructor(__init__())
+	instance를 생성하면 무조건 호출되는 method
+	instance가 생성되면 바로 field 등을 세팅할 수 있도록 함.
+- destructor(__del__())
+	del
+- __repr__()
+	print(<object>)
+- __add__()
+	+
+- __eq__(), ne, lt, le, gt, ge
+	==, !-, <, <=, >, >=
+- abstract method
+	a hollow method -> must be redefined in subclasses
+
+
+instance variable과 class variable을 구분하는 방법?
+	- constructor 안에서 어떻게 field를 표현하는지 확인
+	- 각 객체에 귀속되는 변수 / 공유되는 변수
+
+
+class <subclass>(<superclass>): # inheritance
+	method overriding: redefine methods in the subclass
+	super(): want to use the super-class method
+
+
+
+
+swprs.org, reuters.com

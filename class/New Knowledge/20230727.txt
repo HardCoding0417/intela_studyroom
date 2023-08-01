@@ -1,0 +1,35 @@
+__repr__ then __str__ when printed
+
+_ is also a variable
+
+
+
+
+multiprocessing.Process(target = None, args = (), kwargs = {})
+
+keyword arguments: target, args, kwargs
+
+1) target: function name to be run
+2) args: arguments of the function
+3) kwargs: argument of dictionary of the function
+
+
+<share objects(data) between processes>
+	Because each process has independent memory space, object sharing is needed to get data from other processes.
+
+object sharing: Queue, SimpleQueue, JoinableQueue, Manager, Value, Array in multiprocessing.py
+	
+
+<data synchronization between processes>
+	- control processes to access data
+	- to keep data [from object shared simultaneously] integrity(consistency)
+	
+(All in multiprocessing.py)
+1) Lock
+	- only one process can access in the moment
+2) Semaphore
+	- limit maximum processes to access certain resource
+3) Event
+	- a process trigger event(certain action) to interect with another process
+4) Manager
+	- manage data structures(especially containers)

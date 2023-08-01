@@ -1,0 +1,3 @@
+관리자 권한을 가진 계정 만들기 (계정 생성, 관리자 명단/그룹 추가)
+
+/etc/sudoers, /etc/passwd, /etc/group

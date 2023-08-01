@@ -1,0 +1,26 @@
+<data type>
+
+str: ''(""), has index, not modifiable
+	find(s)(index(s)), replace(s1, s2), split([s])
+
+list: [], has index, modifiable
+	append(a), remove(a), reverse(), pop(idx), sort([reverse=True])
+tuple: (), has index, not modifiable
+dict: {}, no index, key-value pairs
+	[] to access, add, and modify
+set: set()({}), no index, prevents duplicates
+	add(x), remove(x), update(it), &(intersect(s)), |(union(s)), -(difference(s))
+
+
+conditional expression as ternary operator
+
+
+for i, j
+
+
+
+25, 36, 37, 45, 
+
+
+
+dict_keys 딕키스 헉

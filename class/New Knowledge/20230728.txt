@@ -1,0 +1,2 @@
+__name__ == '__main__' for 'spawn' and 'folkserver' start method by python 'multiprocessing' documentation
+JoinableQueue().task_done() after every single get()
