@@ -139,7 +139,17 @@ git config --global user.email "이메일 주소"
 
 #### 2-2 버전 확인하기
 
----
+버전이 만들어졌다는 게 무슨 의미인지 확인해봅시다.
+
+1. 아래의 사진에 보이는 곳을 클릭하면, 자신이 만든 브런치의 이름이 뜰 겁니다.
+
+    ![3-1_branch_check](img/3-1_branch_check.png)
+
+2. commits 버튼을 클릭해보세요.
+
+    ![3-2_check_version](img/3-2_check_version.png)
+
+
 
 ### 원격 저장소에 버전 올리고 가져오기
 
