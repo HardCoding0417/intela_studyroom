@@ -5,10 +5,11 @@
 
 **/x64/
 **/Debug/
-**/.vs/
-
 **/*.vcxproj*
 **/*.sln
+
+**/.vs/
+**/*.exe
 
 
 **/__pycache__
