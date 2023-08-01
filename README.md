@@ -111,9 +111,7 @@ git config --global user.email "이메일 주소"
 
     ![Source Control button](img/Source%20Control%20button.png)
 
-    소스 컨트롤을 클릭해보세요.
-
-3. 그런 다음, 아래 사진과 같이 'Changes' 옆의 플러스(+) 아이콘을 찾아 클릭해줍니다.
+3. 소스 컨트롤을 클릭해보시고, 아래 사진과 같이 'Changes' 옆의 플러스(+) 아이콘을 찾아 클릭해줍니다.
 
     ![Stage All Changes](img/Stage%20All%20Changes.png)
 
