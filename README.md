@@ -83,7 +83,7 @@ git config --global user.email "이메일 주소"
     복사한 파일들을 나중에 원격 저장소에 올릴 예정이니 공유하고 싶지 않은 파일들은 제외시키면 됩니다.
 2. 아래 사진과 같이 'Changes' 옆의 플러스(+) 아이콘을 찾아 클릭합니다.
 
-    ![Stage All Changes]()
+    ![Stage All Changes](Stage%20All%20Changes.png)
 3. 그 위의 'Commit' 버튼을 누릅니다.
 4. 'COMMIT_EDITMSG' 창이 뜨면 첫 번째 줄에 원하는 메시지를 입력합니다.  
     예시) Python 수업 코드 추가, OO 프로젝트 폴더 생성, ...
@@ -97,10 +97,10 @@ git config --global user.email "이메일 주소"
 
 1. 아래 사진과 같이 'Push to...'를 찾아 클릭합니다. 명령 창이 뜨고 Enter를 누르면 push가 완료됩니다.
 
-    ![Push to...]()
+    ![Push to...](Push%20to....png)
 2. <a href = "https://github.com/HardCoding0417/intela_studyroom" target = "_blank">원격 저장소</a>에서 아래 사진과 같이 자신이 만든 branch를 찾아 클릭합니다.
 
-    ![own branch at origin]()
+    ![own branch at origin](own%20branch%20at%20origin.png)
 3. 파일들이 제대로 업로드 되었나 확인합니다.
 
 #### pull / 원격 저장소의 변경사항을 지역 저장소에 적용
@@ -111,7 +111,7 @@ git config --global user.email "이메일 주소"
 
 1. 아래 사진과 같이 'Pull from...'을 찾아 클릭합니다.
 
-    ![Pull from...]()
+    ![Pull from...](Pull%20from....png)
 2. 'origin/`자신이 만든 branch 이름`'을 선택합니다.
 
 ---
