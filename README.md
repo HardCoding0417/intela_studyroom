@@ -120,7 +120,7 @@ git config --global user.email "이메일 주소"
     +버튼을 누르면 변경사항(Changes)에 있던 소스파일이
     아래 사진과 같이 Staged Change 탭으로 이동한 것을 확인할 수 있으실 겁니다.
     
-    ![2-3_stage_changes](img/2-3_stage_changes.png)
+    ![2-4_stage_changes](img/2-4_stage_changes.png)
 
     여기까지의 작업을 스테이징이라고 합니다.
 
@@ -185,7 +185,7 @@ git config --global user.email "이메일 주소"
     main에도 있는 파일인데 내용물이 조금 다르다면, 여러분의 파일이 main의 파일을 대체하게 됩니다.
 
 
-### 가이드
+### 기타 사용법
 
 ![5-1_studyhub](img/5-1_studyhub.png)
 
