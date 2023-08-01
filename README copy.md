@@ -32,13 +32,9 @@
 아래에 보이는 두 사진의 옵션을 제외하고는
 모두 Next로 넘어간 뒤 Install로 설치 진행해주세요.
 
+   ![2-2_initial_branch](img/2-2_initial_branch.png)
+
    ![2-1_Choosing_default_editor](img/2-1_Choosing_default_editor.png)
-- **Choosing the default editor used by Git**  
-    Use Visual Studio Code as Git's default editor
-    ![2-2_initial_branch](img/2-2_initial_branch.png)
-- **Adjusting the name of the initial branch in new repositories**  
-    Override the default branch name for new repositories  
-    (입력 창은 main 그대로 놔 두세요)
 
 설치가 완료되셨다면 'View Release Notes'를 체크 해제하시고 Finish 누르시면 됩니다.  
 만약 Visual Studio Code가 켜져 있는 상태라면 Git을 인식할 수 있도록 껐다가 다시 켜주세요.
