@@ -27,10 +27,13 @@
 아래에 보이는 두 사진의 옵션을 제외하고는
 모두 Next로 넘어간 뒤 Install로 설치 진행해주세요.
 
-    ![2-1_Choosing_default_editor](img/2-1_Choosing_default_editor.png)
+   ![2-1_Choosing_default_editor](img/2-1_Choosing_default_editor.png)
+
 - **Choosing the default editor used by Git**  
     Use Visual Studio Code as Git's default editor
+
     ![2-2_initial_branch](img/2-2_initial_branch.png)
+
 - **Adjusting the name of the initial branch in new repositories**  
     Override the default branch name for new repositories  
     (입력 창은 main 그대로 놔 두세요)
