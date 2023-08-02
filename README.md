@@ -7,7 +7,6 @@
 ## 우리가 GitHub를 써야하는 이유
 
 - 인터넷만 된다면 언제 어디서나 코드와 자료들을 공유할 수 있습니다.
-- 어차피 배워야합니다
 
 ### 용어 정리
 
@@ -91,23 +90,21 @@ git config --global user.email "이메일 주소"
 
 ### 2. 내 코드를 깃헙에 올려보자!
 
-순차적으로 따라하시면 사용법을 익히실 수 있도록 구성했습니다.
+순차적으로 따라하면 사용법을 익힐 수 있도록 구성했습니다.
 
 #### 2-1 커밋하기
-
-하나씩 따라하면서 천천히 알아봅시다.
 
 1. 먼저, 로컬 저장소에서 코드를 변경합니다.
 
     ![2-3_local_repository](img/2-3_local_repository.png)
 
-    파란색 동그라미로 표시된 Explorer를 클릭하시면
-    초록색 선으로 줄쳐진 INTELA_STUDYROOM 폴더가 보이실 겁니다.    
+    파란색 동그라미로 표시된 Explorer를 클릭하면
+    초록색 선으로 줄쳐진 INTELA_STUDYROOM 폴더가 보일 겁니다.    
     이 폴더가 여러분의 로컬 저장소local repository입니다.
 
     아무 코드나 업로드해보세요. 사진 같은 걸 올리셔도 좋습니다.
 
-2. 로컬 저장소에서 코드를 변경하면 소스 컨트롤 버튼에 알람이 들어올 겁니다.
+2. 로컬 저장소에서 코드를 변경하면 소스 컨트롤 버튼에 알람이 들어옵니다.
 
     ![Source Control button](img/Source%20Control%20button.png)
 
@@ -116,7 +113,7 @@ git config --global user.email "이메일 주소"
     ![Stage All Changes](img/Stage%20All%20Changes.png)
 
     +버튼을 누르면 변경사항(Changes)에 있던 소스파일이
-    아래 사진과 같이 Staged Change 탭으로 이동한 것을 확인할 수 있으실 겁니다.
+    아래 사진과 같이 Staged Change 탭으로 이동한 것을 확인할 수 있습니다.
     
     ![2-4_stage_changes](img/2-4_stage_changes.png)
 
@@ -142,7 +139,7 @@ git config --global user.email "이메일 주소"
 
 커밋이 됐다는 게 무슨 의미인지 확인해봅시다.
 
-1. 아래의 사진에 보이는 곳을 클릭하면, 자신이 만든 브런치의 이름이 뜰 겁니다.
+1. 아래의 사진에 보이는 곳을 클릭하면, 자신이 만든 브런치의 이름이 뜹니다.
 
     ![3-1_branch_check](img/3-1_branch_check.png)
 
@@ -154,7 +151,7 @@ git config --global user.email "이메일 주소"
 
     ![3-3_can_you_see](img/3-3_can_you_see.png)
 
-4. 추가된 부분은 +부호와 함께 초록색으로, 제거된 부분은 -부호와 함께 빨간색으로 표시되어있습니다.
+4. 추가된 부분은 +부호와 함께 초록색으로, 제거된 부분은 -부호와 함께 빨간색으로 표시됩니다.
 
     ![3-4_changes](img/3-4_changes.png)
 
@@ -183,18 +180,22 @@ git config --global user.email "이메일 주소"
     main에도 있는 파일인데 내용물이 조금 다르다면, 여러분의 파일이 main의 파일을 대체하게 됩니다.
 
 
-### 기타 사용법
+### 주의사항!
 
 ![5-1_studyhub](img/5-1_studyhub.png)
 
-1. 위 사진에 보이는 것처럼 로컬에 폴더를 만드신 후 
-    모든 코드, 자료들을 그 안에 넣고 머지하시면 됩니다
+1. 여러 사람이 쓰는 레포지토리이기 때문에 머지하실 때는
+    위 사진에 보이는 것처럼 한 곳에 폴더를 몰아넣으신 뒤 머지하셔야 합니다.
 
-2. 만약, 원격 저장소나 특정 브렌치를
+
+
+### 기타 사용법
+
+1. 만약, 원격 저장소나 특정 브렌치를
     로컬 저장소로 불러오고 싶으시다면 아래 사진과 같이 'Pull from...'을 찾아 클릭합니다.
 
     ![Pull from...](img/Pull%20from....png)
-3. 'origin/`자신이 만든 branch 이름`'을 선택합니다.
+2. 'origin/`자신이 만든 branch 이름`'을 선택합니다.
 
 ---
 
