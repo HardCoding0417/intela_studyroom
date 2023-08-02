@@ -9,7 +9,7 @@ class FlyBehavior():
     def fly(self):
         pass
 
-# FlyWithWings, FlyNoWay : Flybehavior를 상속받아 기능을 구현할 클래스
+# FlyWithWings, FlyNoWay, FlyRocketPowered : Flybehavior를 상속받아 기능을 구현할 클래스
 class FlyWithWings(FlyBehavior):
     def fly(self):
         print("날개를 활짝 펴고 세상을 자유롭게 날거야")
@@ -17,6 +17,10 @@ class FlyWithWings(FlyBehavior):
 class FlyNoWay(FlyBehavior):
     def fly(self):
         print("오리는 날 수 없다 엄마에게 혼났죠")
+
+class FlyRocketPowered(FlyBehavior):
+    def fly(self):
+        print("로켓 추진으로 날아갑니다")
 
 # QuackBehavior : 우는 소리를 내는 행동을 구현할 추상클래스
 class QuackBehavior():
@@ -45,6 +49,13 @@ class Duck:
     def __init__(self):
         pass    
     
+    # setFlyBehavior, setQuackBehavior : setter 메서드로 호출하는 방법
+    def setFlyBehavior(self, fb):
+        self.flyBehavior = fb
+    
+    def setQuackBehavior(self, qb):
+        self.quackBehavior = qb
+
     def performQuack(self):
         self.quackBehavior.quack()
 
@@ -67,8 +78,22 @@ class MallardDuck(Duck):
     def display(self):
         print("저는 물오리입니다.")
 
+class ModelDuck(Duck):
+    def __init__(self):
+        self.flyBehavior = FlyNoWay()
+        self.quackBehavior = Quack()
+    
+    def display(self):
+        print("저는 모형 오리입니다.")
+
 # 실행
 if __name__ == "__main__":
     mallard = MallardDuck()
     mallard.performQuack()
     mallard.performFly()
+
+    model = ModelDuck()
+    model.performFly()
+    # setter 메서드로 동적으로 행동 지정하기
+    model.setFlyBehavior(FlyRocketPowered())
+    model.performFly()
