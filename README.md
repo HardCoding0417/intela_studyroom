@@ -10,7 +10,7 @@
 
 ### 용어 정리
 
-원격 저장소 == 리모트 저장소 == remote repository
+원격 저장소 == 리모트 저장소 == remote repository  
 지역 저장소 == 로컬 저장소   == local reprository
 
 ## 목차
