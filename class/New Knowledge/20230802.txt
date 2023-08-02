@@ -1,0 +1,23 @@
+can 'declare' variable that has the same name as the outside variable
+	like in a compound statement that is inside a if statement
+
+global, static variables initialized to 0 by declaration
+
+only one initialization is allowed for global variable
+initialized only once for static variable
+
+
+int[], int[][SIZE]/int * for an array as parameter
+
+const and pointer
+
+ptr1 + ptr2 not allowed; ptr1 - ptr2 allowed
+
+int *arr[SIZE];
+
+
+struct: must declare members before the use
+
+struct Human myself = {20, 174, 56};
+
+padding for each 4 bytes
