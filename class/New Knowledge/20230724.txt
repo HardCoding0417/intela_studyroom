@@ -1,7 +1,0 @@
-Do not use increment/decrement operators to an operand when there are two or more apperances of the same operands
-Short Circuit Rule even preceeds parentheses
-%zd in standard (#pragma warning(disable:4477))
-res = (++a, b++);
-?: preceeds = in C, but is at the same level in C++
-not \%, but %%
-if ~ else if ~ else : highest possibility first / one statement

@@ -1,3 +1,0 @@
-temp = {}
-
-print(temp)
