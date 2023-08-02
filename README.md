@@ -10,8 +10,8 @@
 
 ### 용어 정리
 
-- 원격 저장소 == 리모트 저장소 == remote repository
-- 지역 저장소 == 로컬 저장소   == local reprository
+원격 저장소 == 리모트 저장소 == remote repository
+지역 저장소 == 로컬 저장소   == local reprository
 
 ## 목차
 
@@ -80,7 +80,7 @@ git config --global user.email "이메일 주소"
 4. 붙임표(-)나 밑줄(_)을 이용해서 자신의 영어 이름을 입력합니다.  
     예시) Hong-Gildong
 5. 왼쪽 아래에 해당 이름으로 branch가 변경됨을 확인할 수 있습니다.  
--   앞으로는 기존의 'main' branch가 아닌 자신이 새로 만든 브랜치에서 작업하면 됩니다.
+앞으로는 기존의 'main' branch가 아닌 자신이 새로 만든 브랜치에서 작업하면 됩니다.
 
 여기까지 마치셨다면 깃과 깃허브를 사용할 준비가 끝난 것입니다.
 
@@ -94,7 +94,7 @@ git config --global user.email "이메일 주소"
 
 #### 2-1 커밋하기
 
-- 먼저, 로컬 저장소에서 코드를 변경합니다.
+먼저, 로컬 저장소에서 코드를 변경합니다.
 
     ![2-3_local_repository](img/2-3_local_repository.png)
 
@@ -102,7 +102,7 @@ git config --global user.email "이메일 주소"
 초록색 선으로 줄쳐진 INTELA_STUDYROOM 폴더가 보일 겁니다.  
 이 폴더가 여러분의 로컬 저장소local repository입니다.  
 
-- 아무 코드나 업로드해보세요. 사진 같은 걸 올리셔도 좋습니다.  
+아무 코드나 업로드해보세요. 사진 같은 걸 올리셔도 좋습니다.  
 
 2. 로컬 저장소에서 코드를 변경하면 소스 컨트롤 버튼에 알람이 들어옵니다.
 
@@ -112,18 +112,18 @@ git config --global user.email "이메일 주소"
 
     ![Stage All Changes](img/Stage%20All%20Changes.png)
 
-- +버튼을 누르면 변경사항(Changes)에 있던 소스파일이  
++버튼을 누르면 변경사항(Changes)에 있던 소스파일이  
 아래 사진과 같이 Staged Change 탭으로 이동한 것을 확인할 수 있습니다.
     
     ![2-4_stage_changes](img/2-4_stage_changes.png)
 
-- 여기까지의 작업을 스테이징이라고 합니다.  
+여기까지의 작업을 스테이징이라고 합니다.  
 
 4. 스테이징이란 커밋을 준비하는 단계로,
 
     ![2-5_commit](img/2-5_commit.png)
 
-- 1번에 메세지를 입력 후  
+1번에 메세지를 입력 후  
 2번의 커밋 버튼을 클릭하면  
 
 스테이징된 변경사항들이 저장소에 기록됩니다. (스테이징되지 않은 변경사항들은 기록되지 않습니다)  
