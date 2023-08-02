@@ -1,0 +1,21 @@
+fluent python - luciano ramalho
+
+'사람인'같은 사이트를 통해서 어떤 분야가 파이가 큰지
+자신이 처음 일을 시작할 분야가 전망이 어떠할지 (나중 되면 발을 빼기가 힘드므로)
+기업에서 요구하는 조건들과 내가 잘 맞는지
+	(이런 것 때문에 다방면으로 알고 있는 것이 중요함. 정치/경제/사회/문화)
+
+인재상: not specialist, but generalist
+	무언가를 기획하는 사람이 되는 것이 좋다 // 넓게 공부하자.
+
+
+swprs.org, reuters.com
+
+<기업 분석>
+	조사: 어떻게 들어가야 하는지, 들어갔을 때 연봉, 필요한 역량
+
+
+<자격증>
+	linux master for embedded part
+	OPIc IM2? for English
+	정보처리기사 자격증은 따자. (없는 것보단 낫고 기출만 풀고 가면 합격하니깐)
