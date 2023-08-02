@@ -1,4 +1,4 @@
-# 디자인패턴(Python)
+# HeadFirst 디자인패턴 (Python)
 
 Chapter 1. 
 
