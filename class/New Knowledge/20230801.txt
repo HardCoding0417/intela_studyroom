@@ -14,7 +14,7 @@ book: embedded recipes
 volatile! - "Don't optimize; Follow the exact instruction"
 #undef - release macro definition
 #if, #else, #endif
-#ifdef/#ifndef, #endif - 'endif' mandatory
+#ifdef/#ifndef, #endif - 'endif' is mandatory
 #include <..\test\test.h>
 Windows: \, Linux: /
 
