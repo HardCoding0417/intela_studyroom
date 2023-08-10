@@ -1,0 +1,18 @@
+char s[10] = "Good"; -> Last 6 characters are filled with '\0'
+
+strncpy() doesn't add '\0' at the end
+
+cannot modify string literal
+
+
+
+struct Contact ct2 = ct1; possible
+
+bit field
+
+all lower case for the identifier of enum in linux kernel
+
+
+
+
+OrCAD / kiCAD
