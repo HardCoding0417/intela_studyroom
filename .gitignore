@@ -8,6 +8,10 @@
 **/*.vcxproj*
 **/*.sln
 
+**/*.cproj
+**/*.atsln
+**/*.componentinfo.xml
+
 **/.vs/
 **/*.exe
 
