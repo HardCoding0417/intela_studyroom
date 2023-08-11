@@ -10,8 +10,6 @@ struct Contact ct2 = ct1; possible
 
 bit field
 
-all lower case for the identifier of enum in linux kernel
-
 
 
 
