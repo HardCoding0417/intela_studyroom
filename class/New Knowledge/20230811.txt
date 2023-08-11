@@ -1,0 +1,11 @@
+pull up register, pull down register
+by the position of the register with upper VCC and lower GND
+
+
+<ATmega128A>
+
+DDR to set direction (0 for input, 1 for output) -> PIN for input, PORT for output
+DDRXm (m: 0~7, X: A~G)
+
+
+volatile not to optimize
