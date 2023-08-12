@@ -1,25 +1,32 @@
-.tmp.driveupload
-.vscode
+# files created by Visual Studio Code
+.vscode/
 
-
-
+# files created by Visual Studio
 **/x64/
 **/Debug/
 **/*.vcxproj*
 **/*.sln
+**/.vs/
 
+# files created by Microchip Studio
 **/*.cproj
 **/*.atsln
 **/*.componentinfo.xml
 
-**/.vs/
+# executable files from source codes
 **/*.exe
 
 
+
+# Python cache files
 **/__pycache__
 
 
-**/*.pdf
-
+# source codes for practice
 **/Untitled.*
 **/practice.*
+
+
+
+# Copyrights
+**/K. N. King - C Programming_ A Modern Approach-W. W. Norton & Company (2008).pdf
