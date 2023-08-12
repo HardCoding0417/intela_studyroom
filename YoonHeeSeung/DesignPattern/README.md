@@ -1,6 +1,6 @@
 # HeadFirst 디자인패턴 (Python)
 
-Chapter 1. 
+## Chapter 1. 
 
 * 원칙 1. 변화하는 부분을 찾아내고, 변화하지 않는 부분과 분리한다.
 * 원칙 2. 구현보다는 인터페이스에 맞춰서 프로그래밍한다.
@@ -13,3 +13,14 @@ Chapter 1.
 
 [p.61 전략패턴 예제](./strategy2.py) Character 클래스, WeaponBehavior 인터페이스 구현
 
+## Chapter2 
+
+원칙 4. 상호작용하는 객체 사이에는 가능하면 느슨한 결합(Loose Coupling)을 사용해야 한다.
+
+느슨한 결합(Loose Coupling) : Subject는 Observer들이 Observer 인터페이스를 구현한다는 것을 제외하면 Observer에 관해 모른다.
+
+[옵저버패턴](./observer.py) : 한 객체(Subject)의 상태가 바뀌면 그 객체에 의존하는 다른 객체(Observer)에게 연락이 가고 자동으로 내용이갱신되는 방식으로 일대다(one-to-many) 의존성을 정의한다.
+* Subject 인터페이스 => WeatherData 클래스 구현
+* Observer 인터페이스 => CurrentConditionDisplay, StatisticDisplay, ForcastDisplay, HeatIndexDisplay 클래스 구현
+
+※ 출판-구독(Publish-Subscribe) 패턴 : 여러 개의 Subject와 메시지 유형이 있는 복잡한 상황에서 사용, 미들웨어 시스템에서 종종 쓰임
