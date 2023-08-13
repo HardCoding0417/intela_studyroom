@@ -14,6 +14,7 @@ int main(){
     printf("Enter value of trade: ");
     scanf("%lf", &trade_amount);
 
+
     if(trade_amount < 2500.){
         commission_amount = 30. + trade_amount*.017;
         if(commission_amount < 39.){
@@ -36,6 +37,7 @@ int main(){
     }
 
     printf("Commission: $%.2lf\n", commission_amount);
+
 
     return 0;
 }
