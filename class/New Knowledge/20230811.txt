@@ -8,4 +8,4 @@ DDR to set direction (0 for input, 1 for output) -> PIN for input, PORT for outp
 DDRXm (m: 0~7, X: A~G)
 
 
-volatile not to optimize
+volatile: don't optimize
