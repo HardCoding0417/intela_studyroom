@@ -1,0 +1,4 @@
+Common Cathode: common GND
+    Vcc to supply current
+Common Anode: common Vcc
+    GND to supply current
