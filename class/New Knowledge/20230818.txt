@@ -1,0 +1,5 @@
+FSM: Finite State Machine
+    STOP, RUN, RESET
+
+PAM, PWM
+duty cycle(%)

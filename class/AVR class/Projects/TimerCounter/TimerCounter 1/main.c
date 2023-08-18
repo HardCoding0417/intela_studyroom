@@ -12,9 +12,9 @@ int cnt;
 
 ISR(TIMER0_OVF_vect) {
 	cnt++;
-	TCNT0 = 131;
+	TCNT0 = 131; // 256 - 131 = 125; 2ms 
 	
-	if (cnt == 50) {
+	if (cnt == 50) { // 0.1s
 		PORTD = ~PORTD;
 		cnt = 0;
 	}
