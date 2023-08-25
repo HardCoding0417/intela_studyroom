@@ -4,4 +4,4 @@
 
 
 Deep Learning from Scratch
-Deep Learning - Ian Goodfellow
+Hands-On Machine Learning with Scikit-Learn, Keras & TensorFlow
