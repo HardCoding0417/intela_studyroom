@@ -1,0 +1,19 @@
+16-bit Timer/Counter for PWM of certain frequency (by changing MAX)
+
+
+Use Serial rather than Parallel due to its cheaper cost
+    MSB is transmitted first
+
+synchronous: use clock('s falling edge)
+asynchronous: no clock
+    IDLE(high) - Start bit(low 1 bit) - Data bits(5~9 bits) - Parity bit(to match odd/even)
+    - Stop bit(s)(high 1/2 bit(s)) - Start bit or IDLE
+
+Serial Data Line / Serial Clock Line: Initially high
+rising edge or falling edge of SDL only when SCL is low
+start: SCL high, SDL falling edge
+end: SCL high, SDL rising edge (read datasheet for TWI)
+
+
+
+unsigned in for loop

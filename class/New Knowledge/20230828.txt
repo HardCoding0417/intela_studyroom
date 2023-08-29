@@ -3,3 +3,6 @@ ex] 연봉: 평균 대신 중위값 (고액 연봉자 때문에)
 
 confusion matrix
     ex] heart disease(Precision or Accuracy!), spam mail(Sensitivity!)
+
+
+앨런 튜링, 지능에 관하여 - 앨런 튜링
