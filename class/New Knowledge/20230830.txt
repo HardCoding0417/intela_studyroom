@@ -1,0 +1,4 @@
+Anaconda에서 환경을 만들면 Pycharm의 여러 프로젝트에서 사용 가능
+
+
+CSV: Comma-Seperated Values / TSV
