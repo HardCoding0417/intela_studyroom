@@ -15,24 +15,22 @@
 void I2C_init() {
 	I2C_DDR |= 0x1 << I2C_SCL | 0x1 << I2C_SDA;
 	TWBR = 72; // 100kHz SCL frequency
-	
-	TWCR |= 1 << TWEN;
 }
 
 void I2C_start() {
-	TWCR |= 1 << TWINT | 1 << TWSTA;
+	TWCR |= 1 << TWINT | 1 << TWSTA | 1 << TWEN;
 	while (!(TWCR & 1 << TWINT)) {
 		/* EMPTY LOOP BODY */
 	}
 }
 void I2C_stop() {
-	TWCR |= 1 << TWINT | 1 << TWSTO;
+	TWCR |= 1 << TWINT | 1 << TWSTO | 1 << TWEN;
 	TWCR &= ~(1 << TWEN);
 }
 
 void I2C_TXData(uint8_t data) {
 	TWDR = data;
-	TWCR = 1 << TWINT;
+	TWCR = 1 << TWINT | 1 << TWEN;
 	while (!(TWCR & 1 << TWINT)) {
 		/* EMPTY LOOP BODY */
 	}
