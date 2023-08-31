@@ -13,6 +13,20 @@
 **/*.atsln
 **/*.componentinfo.xml
 
+# files created by STM32CubeIDE
+**/.metadata/
+**/.settings
+**/gpio.h
+**/*stm32f4xx*
+**/gpio.c
+**/syscalls.c
+**/sysmem.c
+**/Startup/
+**/Drivers/
+**/.*project
+**/*Debug.launch
+**/STM32F411RETX*
+
 # executable files from source codes
 **/*.exe
 
