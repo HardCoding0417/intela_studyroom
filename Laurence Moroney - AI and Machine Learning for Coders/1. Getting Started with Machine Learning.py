@@ -1,8 +1,9 @@
+import numpy as np
 from tensorflow.keras import Sequential
 from tensorflow.keras.layers import Dense
-import numpy as np
 
-l0 = Dense(units=1, input_shape=[1])
+
+l0 = Dense(units=1, input_shape=(1,))
 model = Sequential([l0])
 model.compile(optimizer='sgd', loss='mean_squared_error')
 
@@ -11,5 +12,5 @@ ys = np.array([-3.0, -1.0, 1.0, 3.0, 5.0, 7.0], dtype=float)
 
 model.fit(xs, ys, epochs=500)
 
-print(model.predict([10.0]))
-print("Here is what I learned: {}".format(l0.get_weights()))
+print(model.predict([10.0])[0][0])
+print(l0.get_weights())
