@@ -24,7 +24,7 @@
 **/Startup/
 **/Drivers/
 **/.*project
-**/*Debug.launch
+**/*.launch
 **/STM32F411RETX*
 
 # executable files from source codes
@@ -39,6 +39,9 @@
 # source codes for practice
 **/Untitled.*
 **/practice.*
+
+# datasets for ML training
+**/datasets/
 
 
 
