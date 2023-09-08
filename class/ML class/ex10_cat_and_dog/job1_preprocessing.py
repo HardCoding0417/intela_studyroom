@@ -34,5 +34,5 @@ print(labels[0])
 
 training_images, test_images, training_labels, test_labels\
     = train_test_split(images, labels, test_size=0.1)
-images_labels = (training_images, test_images, training_labels, test_labels)
+images_labels = (training_images, training_labels, test_images, test_labels)
 np.save('../datasets/cat_dog/binary_image_data.npy', images_labels)
