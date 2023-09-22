@@ -18,17 +18,14 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "adc.h"
 #include "dma.h"
-#include "i2c.h"
 #include "tim.h"
+#include "usart.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "button.h"
-#include "led.h"
-#include "lcd.h"
+#include "stepper_motor.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -43,30 +40,28 @@
 
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
-#define BUTTONZ_GPIOx GPIOA
-#define BUTTONZ_GPIO_Pin GPIO_PIN_5
 
-#define THRESHOLD_XPLUS 222
-#define THRESHOLD_XMINUS 33
-#define THRESHOLD_YPLUS 222
-#define THRESHOLD_YMINUS 33
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-GPIO_TypeDef *LED_GPIOx[5] = {GPIOA, GPIOB, GPIOB, GPIOB, GPIOB};
-uint16_t LED_GPIO_Pin[5] = {
-        GPIO_PIN_8, GPIO_PIN_10, GPIO_PIN_4, GPIO_PIN_5, GPIO_PIN_3
-};
+uint8_t buffer[11];
+uint8_t buffer_idx = 0;
+uint8_t rxData;
 
-uint8_t ADC_val[2];
+GPIO_TypeDef *stepperMotor_GPIOx[4] = {GPIOA, GPIOA, GPIOA, GPIOB};
+uint16_t stepperMotor_GPIO_Pin[4] = {
+        GPIO_PIN_5, GPIO_PIN_6,
+        GPIO_PIN_7, GPIO_PIN_6
+};
+StepperMotor stepper_motor1;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
-
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -103,68 +98,24 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_DMA_Init();
-  MX_ADC1_Init();
-  MX_TIM11_Init();
-  MX_I2C1_Init();
+  MX_TIM10_Init();
+  MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-  LCD_init();
+  HAL_UART_Receive_DMA(&huart2, &rxData, sizeof(rxData));
+  HAL_TIM_Base_Start(&htim10);
 
-  HAL_ADC_Start_DMA(&hadc1, (uint32_t *)ADC_val, 2);
+  stepperMotor_init(&stepper_motor1, stepperMotor_GPIOx,
+                    stepperMotor_GPIO_Pin, 32.0, 1 / 64.0,
+                    CCW, FULLSTEP_WAVEDRIVE, 10);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  Button button_z;
-  LED led_z, led_xp, led_xm, led_yp, led_ym;
-
-  button_init(&button_z, BUTTONZ_GPIOx, BUTTONZ_GPIO_Pin);
-  led_init(&led_z, LED_GPIOx[0], LED_GPIO_Pin[0]);
-  led_init(&led_xp, LED_GPIOx[1], LED_GPIO_Pin[1]);
-  led_init(&led_xm, LED_GPIOx[2], LED_GPIO_Pin[2]);
-  led_init(&led_yp, LED_GPIOx[3], LED_GPIO_Pin[3]);
-  led_init(&led_ym, LED_GPIOx[4], LED_GPIO_Pin[4]);
-
   while (1)
   {
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-    if (button_getAction(&button_z) == ACT_PUSH
-            && HAL_TIM_Base_GetState(&htim11) == HAL_TIM_STATE_READY) {
-        led_toggle(&led_z);
-
-        HAL_TIM_Base_Start(&htim11);
-        TIM11->CNT = 0;
-    }
-    if (TIM11->CNT >= 10000 && HAL_TIM_Base_GetState(&htim11) == HAL_TIM_STATE_BUSY) {
-        HAL_TIM_Base_Stop(&htim11);
-    }
-
-    if (ADC_val[0] > THRESHOLD_XPLUS) {
-        led_on(&led_xp);
-        led_off(&led_xm);
-    }
-    else if (ADC_val[0] < THRESHOLD_XMINUS) {
-        led_on(&led_xm);
-        led_off(&led_xp);
-    }
-    else {
-        led_off(&led_xp);
-        led_off(&led_xm);
-    }
-
-    if (ADC_val[1] > THRESHOLD_YPLUS) {
-        led_on(&led_yp);
-        led_off(&led_ym);
-    }
-    else if (ADC_val[1] < THRESHOLD_YMINUS) {
-        led_on(&led_ym);
-        led_off(&led_yp);
-    }
-    else {
-        led_off(&led_yp);
-        led_off(&led_ym);
-    }
   }
   /* USER CODE END 3 */
 }
@@ -215,7 +166,28 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
+    if (huart->Instance == USART2) {
+        if (rxData == '\n') {
+            buffer[buffer_idx] = '\0';
+            buffer_idx = 0;
 
+            int32_t angle = 0;
+            int8_t idx = 0;
+            while (buffer[idx]) {
+                angle *= 10;
+                angle += buffer[idx++] - 48;
+            }
+
+            stepperMotor_drive(&stepper_motor1, angle);
+        }
+        else {
+            buffer[buffer_idx++] = rxData;
+        }
+
+        HAL_UART_Receive_DMA(huart, &rxData, sizeof(rxData));
+    }
+}
 /* USER CODE END 4 */
 
 /**
