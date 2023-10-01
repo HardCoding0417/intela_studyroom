@@ -1,0 +1,41 @@
+{
+    "user_agent": "fresi",
+    "categories": {
+        "경제 뉴스 포털": [
+            "https://www.mk.co.kr/",
+            "https://www.mt.co.kr/",
+            "https://www.edaily.co.kr/",
+            "https://biz.chosun.com/",
+            "https://www.hankyung.com/"
+        ],
+        "경제 플랫폼": [
+            "https://finance.naver.com/",
+            "https://finance.daum.net/",
+            "https://www.infostock.co.kr/"
+        ],
+        "경제정보 및 연구 플랫폼": [
+            "https://www.kbstar.com/",
+            "https://www.nhqv.com/"
+        ],
+        "정부기관": [
+            "https://www.krx.co.kr/",
+            "https://dart.fss.or.kr/"
+        ],
+        "포럼 및 커뮤니티": [
+            "https://www.clien.net/"
+        ],
+        "금융투자협회": [
+            "https://www.kofia.or.kr/"
+        ],
+        "금융데이터포털": [
+            "https://dart.fss.or.kr/"
+        ],
+        "애널리스트들의 리포트": [
+            "https://www.wiseana.com/",
+            "https://fnguide.com/",
+            "https://www.etradecenter.net/",
+            "https://www.kisvalue.com/",
+            "https://www.primenews.co.kr/"
+        ]
+    }
+}
