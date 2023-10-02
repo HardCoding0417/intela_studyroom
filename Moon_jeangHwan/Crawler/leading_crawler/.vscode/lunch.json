@@ -1,0 +1,16 @@
+
+{
+    "version": "3.11.4",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/test.py", // 어떤 python 파일을 실행할 것인지
+            "args": ["--config","test.yaml",
+            "--input","check.txt",
+            ], // argument 집어넣어서 실행할 경우
+            "console": "integratedTerminal"
+        }
+    ]
+}
