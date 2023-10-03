@@ -18,7 +18,6 @@ def crawling(url, user_agent):                      # 크롤링 함수
                                                     #   사이트들은 SSl 인증서를 받아 자신이 신뢰할 수 있는 사이트임을 증명하는데
                                                     #   이 인증서는 CA(Certificate Authority)로부터 발급되며,
                                                     #   브라우저들이 해당 사이트가 안전한 곳인지를 판단하는 근거가 된다
-                                                    #   
 
 
         soup = BeautifulSoup(response.text, 'html.parser')

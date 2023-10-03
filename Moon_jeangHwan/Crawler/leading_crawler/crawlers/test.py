@@ -80,3 +80,6 @@ for url in static_crawling_impossible:
     print(url)
 
 
+            
+            
+            
