@@ -13,10 +13,12 @@
 
 
 
+// For HAL GPIO function
 #include "stm32f4xx.h"
 
 
 
+// the Fan structure; has timer handler and timer channel
 typedef struct {
     TIM_HandleTypeDef *htim;
     uint32_t Channel;

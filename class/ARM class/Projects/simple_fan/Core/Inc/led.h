@@ -13,13 +13,16 @@
 
 
 
+// For HAL GPIO function
 #include "stm32f4xx.h"
 
 
 
+// LED state; 0 is off, 1 is on
 enum LEDState {LED_OFF, LED_ON};
 
 
+// the LED structure; has GPIO pin specification and the current state
 typedef struct {
     GPIO_TypeDef *GPIOx;
     uint16_t GPIO_Pin;

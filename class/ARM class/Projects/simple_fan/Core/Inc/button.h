@@ -13,9 +13,11 @@
 
 
 
+// For HAL GPIO function
 #include "stm32f4xx.h"
 
 
+// the Button structure; has GPIO pin specification and the previous state
 typedef struct {
     GPIO_TypeDef *GPIOx;
     uint16_t GPIO_Pin;
@@ -23,7 +25,9 @@ typedef struct {
 } Button;
 
 
+// button state; 0 is pushed, 1 is released
 enum ButtonState {PUSHED, RELEASED};
+// button action; 0 is 'no act', 1 is 'act: push', 2 is 'act: release'
 enum ButtonAction {NO_ACT, ACT_PUSH, ACT_RELEASE};
 
 

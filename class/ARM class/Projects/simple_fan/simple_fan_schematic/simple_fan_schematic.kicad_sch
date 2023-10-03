@@ -1648,7 +1648,7 @@
   (symbol (lib_id "Motor:Fan") (at 311.15 46.99 0) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 2f2ba661-2498-45c7-ba2b-0f0d8f506110)
-    (property "Reference" "M?" (at 316.23 45.72 0)
+    (property "Reference" "M1" (at 316.23 45.72 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "fan" (at 316.23 48.26 0)
@@ -1665,7 +1665,7 @@
     (instances
       (project "simple_fan_schematic"
         (path "/f92461eb-1891-449a-a9d7-0575a2441fe9"
-          (reference "M?") (unit 1)
+          (reference "M1") (unit 1)
         )
       )
     )

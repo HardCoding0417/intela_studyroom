@@ -70,6 +70,7 @@ void SystemClock_Config(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
+  // GPIO pin specifications for buttons and LEDs
   GPIO_TypeDef *button_GPIOx[4] = {GPIOB, GPIOB, GPIOB, GPIOB};
   uint16_t button_GPIO_Pin[4] = {
           GPIO_PIN_1, GPIO_PIN_15, GPIO_PIN_14, GPIO_PIN_13
@@ -100,6 +101,8 @@ int main(void)
   MX_TIM11_Init();
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
+  // Declare and initialize buttons/LEDs/fan structures
+  // initialize LCD
   Button button_stop;
   Button button_speed1, button_speed2, button_speed3;
 
@@ -132,43 +135,56 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+	// Detect 'button push' for each button and do the corresponding directives
     if (button_getAction(&button_stop) == ACT_PUSH) {
+    	// Turn the fan off
         fan_changeSpeed(&fan, 0.);
 
+        // Turn the LEDs off
         led_off(&led_speed1);
         led_off(&led_speed2);
         led_off(&led_speed3);
 
+        // Display 'Stopped'
         LCD_put_cursor(0, 0);
         LCD_send_str("Stopped");
     }
-    else if (button_getAction(&button_speed1) == ACT_PUSH) {
+    if (button_getAction(&button_speed1) == ACT_PUSH) {
+    	// Turn the fan on at speed 1
         fan_changeSpeed(&fan, 0.65);
 
+        // Turn on only the LED indicating speed 1
         led_off(&led_speed2);
         led_off(&led_speed3);
         led_on(&led_speed1);
 
+        // Display 'Speed 1'
         LCD_put_cursor(0, 0);
         LCD_send_str("Speed 1");
     }
-    else if (button_getAction(&button_speed2) == ACT_PUSH) {
+    if (button_getAction(&button_speed2) == ACT_PUSH) {
+    	// Turn the fan on at speed 2
         fan_changeSpeed(&fan, 0.82);
 
+        // Turn on only the LED indicating speed 2
         led_off(&led_speed1);
         led_off(&led_speed3);
         led_on(&led_speed2);
 
+        // Display 'Speed 2'
         LCD_put_cursor(0, 0);
         LCD_send_str("Speed 2");
     }
-    else if (button_getAction(&button_speed3) == ACT_PUSH) {
+    if (button_getAction(&button_speed3) == ACT_PUSH) {
+    	// Turn the fan on at speed 3
         fan_changeSpeed(&fan, 1.);
 
+        // Turn on only the LED indicating speed 3
         led_off(&led_speed1);
         led_off(&led_speed2);
         led_on(&led_speed3);
 
+        // Display 'Speed 3'
         LCD_put_cursor(0, 0);
         LCD_send_str("Speed 3");
     }

@@ -13,10 +13,12 @@
 
 
 
+// For HAL GPIO function
 #include "stm32f4xx_hal.h"
 #include "i2c.h"
 
 
+// I2C address for LCD (write mode)
 #define LCD_ADDRESS (0X27 << 1)
 
 

@@ -12,6 +12,7 @@
 
 
 
+// Initialize Fan structure and initiate timer PWM generation
 void fan_init(Fan *fan, TIM_HandleTypeDef *htim, uint32_t Channel) {
     fan->htim = htim;
     fan->Channel = Channel;
@@ -19,6 +20,8 @@ void fan_init(Fan *fan, TIM_HandleTypeDef *htim, uint32_t Channel) {
     HAL_TIM_PWM_Start(htim, Channel);
 }
 
+// Activate or deactivate fan
+// percentage: power of output; 0. ~ 100.(%)
 void fan_changeSpeed(Fan *fan, float percentage) {
     switch (fan->Channel) {
         case TIM_CHANNEL_1:

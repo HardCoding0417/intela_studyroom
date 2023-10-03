@@ -8,10 +8,11 @@
 
 
 
-#include <lcd.h>
+#include "lcd.h"
 
 
 
+// Initialize LCD as the datasheet suggests
 void LCD_init() {
     HAL_Delay(15);
     LCD_send_cmd(0x30);
@@ -34,13 +35,16 @@ void LCD_init() {
     LCD_send_cmd(0x06);
 }
 
+// Clear LCD
 void LCD_clear() {
     HAL_Delay(10);
     LCD_send_cmd(0x08);
-    for (int8_t i = 0; i < 70; i++) {
+    for (int8_t i = 0; i < 32; i++) {
         LCD_send_data('\0');
     }
 }
+// Locate cursor on LCD
+// row: row 0 ~ 1 / col: column 0 ~ 15
 void LCD_put_cursor(uint8_t row, uint8_t col) {
     if (row == 0) {
         col |= 0x80;
@@ -53,6 +57,7 @@ void LCD_put_cursor(uint8_t row, uint8_t col) {
     LCD_send_cmd(col);
 }
 
+// Send command to LCD
 void LCD_send_cmd(uint8_t cmd) {
     uint8_t cmd_t[4];
     uint8_t cmd_h, cmd_l;
@@ -67,6 +72,7 @@ void LCD_send_cmd(uint8_t cmd) {
 
     HAL_I2C_Master_Transmit(&hi2c1, LCD_ADDRESS, cmd_t, sizeof(cmd_t), 4);
 }
+// Send byte size data to LCD
 void LCD_send_data(char data) {
     uint8_t data_t[4];
     uint8_t data_h, data_l;
@@ -81,6 +87,7 @@ void LCD_send_data(char data) {
 
     HAL_I2C_Master_Transmit(&hi2c1, LCD_ADDRESS, data_t, sizeof(data_t), 4);
 }
+// Send string to LCD
 void LCD_send_str(char *str) {
     while (*str) {
         LCD_send_data(*str++);
