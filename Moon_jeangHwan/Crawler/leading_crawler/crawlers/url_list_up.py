@@ -4,7 +4,7 @@ from urllib.parse import urljoin
 from time import sleep
 import json
 import logging
-from crawler import check_can_fetch
+from Moon_jeangHwan.Crawler.leading_crawler.crawlers.mvp_crawler import check_can_fetch
 from datetime import datetime, timedelta
 
 MAX_LINKS_PER_PAGE = 10
