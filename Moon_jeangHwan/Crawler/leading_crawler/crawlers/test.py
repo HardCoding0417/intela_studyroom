@@ -4,7 +4,7 @@ from urllib.parse import urljoin
 from time import sleep
 import json
 import logging
-from crawler import check_can_fetch
+from Moon_jeangHwan.Crawler.leading_crawler.crawlers.mvp_crawler import check_can_fetch
 from datetime import datetime, timedelta
 
 MAX_LINKS_PER_PAGE = 10
@@ -12,6 +12,7 @@ MAX_LINKS_PER_PAGE = 10
 visited_urls = set()  # 방문한 URL 저장
 static_crawling_possible = []  # 정적 크롤링 가능한 URL 저장
 static_crawling_impossible = []  # 정적 크롤링 불가능한 URL 저장
+web_graph = {}
 
 # 로깅
 logging.basicConfig(level=logging.INFO,
@@ -44,13 +45,22 @@ def spidering(url, user_agent, new_links):
             if new_url not in visited_urls:
                 new_links.append(new_url)  # 새로 발견한 링크 저장
 
+            # 웹 그래프에 현재 URL 및 발견된 링크 저장
+        if url not in web_graph:
+            web_graph[url] = []
+        for new_url in new_links:
+            if new_url not in web_graph[url]:
+                web_graph[url].append(new_url)
+
     # 예외상황 발생 시
     except Exception as e:
         logging.error(f"Error while processing {url}. Reason: {e}")
 
 
+
+
 # 크롤링 돌릴 준비
-with open("../config/config.json", "r", encoding="utf-8") as file:
+with open(r"../config/config.json", "r", encoding="utf-8") as file:
     config = json.load(file)
 all_urls = []
 for urls in config["categories"].values():
@@ -80,6 +90,44 @@ for url in static_crawling_impossible:
     print(url)
 
 
-            
-            
-            
+import numpy as np
+
+def pagerank(M, num_iterations=100, d=0.85):
+    N = M.shape[1]
+    v = np.random.rand(N, 1)
+    v = v / np.linalg.norm(v, 1)
+    M_hat = (d * M + (1 - d) / N)
+    
+    for i in range(num_iterations):
+        v = M_hat @ v
+        
+    return v
+
+def web_graph_to_matrix(web_graph):
+    all_pages = list(web_graph.keys())
+    N = len(all_pages)
+    M = np.zeros((N, N))
+    
+    for i, page in enumerate(all_pages):
+        linked_pages = web_graph[page]
+        for linked_page in linked_pages:
+            if linked_page in all_pages:
+                j = all_pages.index(linked_page)
+                M[j, i] = 1.0 / len(linked_pages)
+    
+    return M
+
+
+# 크롤링 완료 후 코드 추가
+M = web_graph_to_matrix(web_graph)
+page_rank_values = pagerank(M)
+
+# 페이지랭크 값과 함께 URL 출력
+url_page_rank = {url: rank for url, rank in zip(web_graph.keys(), page_rank_values)}
+sorted_urls = sorted(url_page_rank.items(), key=lambda x: x[1], reverse=True)
+
+print("\n페이지랭크 값과 함께 정렬된 URL들:")
+for url, rank in sorted_urls:
+    print(f"Rank: {rank} - URL: {url}")
+
+
