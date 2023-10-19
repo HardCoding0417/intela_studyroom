@@ -26,6 +26,7 @@
 **/.*project
 **/*.launch
 **/STM32F411RETX*
+**/Middlewares/
 
 # executable files from source codes
 **/*.exe
