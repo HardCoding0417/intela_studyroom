@@ -8,6 +8,9 @@
 **/*.sln
 **/.vs/
 
+# files created by PyCharm
+**/*.xml
+
 # files created by Microchip Studio
 **/*.cproj
 **/*.atsln
